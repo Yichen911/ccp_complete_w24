@@ -13,20 +13,20 @@ body{
 
 .skip-main {
     position: absolute;
-    left: -100%;
     overflow: hidden;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    font-size: 25px;
 }
 
 .skip-main:focus {
     position: static;
+    text-align: center;
     width: auto;
     height: auto;
-    display: block;
-    text-align: center;
-    padding: 10px;
-    text-decoration: none;
-    color: #222;
-    background-color: rgb(243, 242, 242);
+    top: auto;
+    border: 2px solid #301934;
 }
 
 
@@ -133,21 +133,23 @@ nav ul li a {
     display: block;
     background-color: #f7f7f7;
     text-decoration: none;
-    color: #c20101;
+    color: #000000;
     margin: 0px;
     padding: 12px;
 }
 
 nav ul li a:hover {
-    background: #ffaeae;
-    font-size: 1.7rem;
+    background: #f1d63d;
+    font-size: 2.2rem;
     text-decoration: underline;
+    color:#0062ff;
 }
 
 .active{
     font-weight: bold;
-    background-color: #ff4949;
-    color: black;
+    background-color: #2d1c1c;
+    color: rgb(234, 130, 130);
+    text-decoration: underline;
 }
 
 .page-item {
@@ -155,7 +157,7 @@ nav ul li a:hover {
     padding-top: 20px;
     padding-bottom: 20px;
     box-shadow: 0 5px 20px 0 rgba(0,0,0,.2);
-    background-color: #ff4e4e;
+    background-color: #ffffff;
     align-items: center;
 }
 
@@ -179,7 +181,7 @@ nav ul li a:hover {
 }
 
 .grid-gallery h4 {
-    grid-column: 1/3;
+    /* grid-column: 1/3; */
     align-items: center;
 }
 
@@ -193,7 +195,7 @@ nav ul li a:hover {
     align-items: center;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 750px) {
     .skip-main {
         position: static;
         display: block;
@@ -207,7 +209,7 @@ nav ul li a:hover {
 
     body {
         font-size: 16px;
-        background-color:#92d5f4bb;
+        background-color:#ffffffbb;
         font-family: 'Courier New', Courier, monospace;
         font-weight: bold;
     }
@@ -229,18 +231,32 @@ nav ul li a:hover {
         font-size: 1.5rem;
     }
 
+    .active{
+        font-weight: bold;
+        background-color: #060f1e;
+        color: rgb(221, 188, 39);
+        text-decoration: underline;
+    }
+
     p, .likes, .ingredients, .description, .instructions {
         line-height: 1.6;
         font-size: 1.2rem;
-        background-color: aliceblue;
+        background-color: rgb(255, 255, 255);
+
     }
 
+    .likes {
+        display: grid;
+        justify-content: center;
+    }
+
+
     p{
-        background-color:  aliceblue;
+        background-color:  rgb(255, 255, 255);
     }
     
     .page-item{
-        background-color: #92d5f4bb;
+        background-color: #4f7b8fbb;
     }
 
     img, video {
@@ -252,7 +268,7 @@ nav ul li a:hover {
     }
 
     nav{
-        background-color: #0e2a7d;
+        background-color: #1e677b;
     }
 
     nav ul {
@@ -271,7 +287,118 @@ nav ul li a:hover {
     .photos {
         grid-template-columns: 1fr 1fr 1fr;
     }
+    .introduction{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+        margin-left: 100px;
+        margin-right: 100px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .intro{
+        background:url(../images/bangkok-nongif.jpeg);
+    }
 
+}
+
+@media screen and (min-width: 1200px) {
+    p {
+        font-size: 20px;
+    }
+
+    li {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 30px;
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    body{
+        height: 1500px;
+    }
+
+    main{
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    header{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .shell{
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+    }
+
+    .Home{
+        width:100%;
+        height: 700px;
+        overflow: hidden;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        transition: clip-path o.5s ease;
+
+    }
+    .Homeimg{
+        width: 100%;
+        height: 100%;
+        background: url(../images/bangkok-nongif.jpeg);
+        background-size: cover;
+        transform: scale(1);
+        transition: transform 0.5s ease;
+    }
+
+    .main{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .main img{
+        width: 50%;
+    }
+
+    .intro{
+        background:none;
+    }
+
+    .grid-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: aliceblue;
+    }
+    .grid-gallery img, .grid-gallery video {
+        grid-column: 1/2;
+        width: 100%;
+    }
+
+    .grid-gallery .main_images{
+        grid-column: 1/3;
+    }
+
+    .description{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
 }
 
 
